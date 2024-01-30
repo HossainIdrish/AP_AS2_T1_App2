@@ -4,14 +4,14 @@ require([
   "esri/layers/FeatureLayer"
 ], function(Map, MapView, FeatureLayer) {
     var map = new Map({
-        basemap: "dark-gray" // or any other basemap type
+        basemap: "hybrid"
     });
 
     var view = new MapView({
         container: "viewDiv",
         map: map,
-        zoom: 4, // Adjust zoom level
-        center: [15, 65] // Adjust center [longitude, latitude]
+        zoom: 5, 
+        center: [25, 65] 
     });
 
     // Add feature layer
