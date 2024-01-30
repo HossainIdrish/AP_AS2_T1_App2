@@ -6,14 +6,15 @@ require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], (Map, Ma
     const view = new MapView({
         container: "viewDiv",
         map: map,
-        extent: {
-            xmin: -9177811,
-            ymin: 4247000,
-            xmax: -9176791,
-            ymax: 4247784,
-            spatialReference: 102100
-        }
-    });
+ // extent: {
+          //   // autocasts as new Extent()
+          //   xmin: -9177811,
+          //   ymin: 4247000,
+          //   xmax: -9176791,
+          //   ymax: 4247784,
+          //   spatialReference: 102100
+          // }
+        });
 
     const featureLayer = new FeatureLayer({
         url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Major_Cities_/FeatureServer/0"
