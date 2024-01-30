@@ -1,6 +1,6 @@
 require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], (Map, MapView, FeatureLayer) => {
     const map = new Map({
-        basemap: "dark-gray"
+        basemap: "hybrid"
     });
 
     const view = new MapView({
