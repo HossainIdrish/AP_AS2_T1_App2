@@ -1,22 +1,22 @@
-require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], (Map, MapView, FeatureLayer) => {
-    const map = new Map({
-        basemap: "hybrid"
+require([
+  "esri/Map",
+  "esri/views/MapView",
+  "esri/layers/FeatureLayer"
+], function(Map, MapView, FeatureLayer) {
+    var map = new Map({
+        basemap: "topo" // or any other basemap type
     });
 
-    const view = new MapView({
+    var view = new MapView({
         container: "viewDiv",
         map: map,
- // extent: {
-          //   // autocasts as new Extent()
-          //   xmin: -9177811,
-          //   ymin: 4247000,
-          //   xmax: -9176791,
-          //   ymax: 4247784,
-          //   spatialReference: 102100
-          // }
-        });
+        zoom: 4, // Adjust zoom level
+        center: [15, 65] // Adjust center [longitude, latitude]
+    });
 
-    const featureLayer = new FeatureLayer({
+    // Add feature layer
+    var featureLayer = new FeatureLayer({
+        // Use your own URL or a sample URL
         url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Major_Cities_/FeatureServer/0"
     });
 
