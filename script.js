@@ -4,7 +4,7 @@ require([
   "esri/layers/FeatureLayer"
 ], function(Map, MapView, FeatureLayer) {
     var map = new Map({
-        basemap: "topo" // or any other basemap type
+        basemap: "dark-gray" // or any other basemap type
     });
 
     var view = new MapView({
