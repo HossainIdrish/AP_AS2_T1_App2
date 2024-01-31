@@ -21,5 +21,5 @@ require([
         id: "630750de135f4a7fbd2acfc257ae0e2f" 
       }
     });
-    map.add(featureLayer1);
+    map.add(featureLayer);
 
