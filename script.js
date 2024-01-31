@@ -16,9 +16,10 @@ require([
 
     // Add feature layer
     var featureLayer = new FeatureLayer({
-        // Use your own URL or a sample URL
-        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Major_Cities_/FeatureServer/0"
+    const featureLayer = new FeatureLayer({
+      portalItem: {
+        id: "630750de135f4a7fbd2acfc257ae0e2f" 
+      }
     });
+    map.add(featureLayer1);
 
-    map.add(featureLayer);
-});
