@@ -10,8 +10,8 @@ require([
     var view = new MapView({
         container: "viewDiv",
         map: map,
-        zoom: 5, 
-        center: [25, 65] 
+        zoom: 4, 
+        center: [-98.5795, 39.82839] 
     });
 
     // Add feature layer
