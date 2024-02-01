@@ -1,31 +1,27 @@
-require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], (Map, MapView, FeatureLayer) => {
-    const map = new Map({
-        basemap: "dark-gray"
-    });
-
-    const view = new MapView({
-        container: "viewDiv",
-        map: map,
-        extent: {
-            xmin: -9177811,
-            ymin: 4247000,
-            xmax: -9176791,
-            ymax: 4247784,
-            spatialReference: 102100
+require([
+    "esri/views/MapView", 
+    "esri/WebMap", 
+    "esri/layers/FeatureLayer"
+], function(MapView, WebMap, FeatureLayer) {
+    const webmap = new WebMap({
+        portalItem: {
+            id: "630750de135f4a7fbd2acfc257ae0e2f" // ID of your existing WebMap
         }
     });
 
-    /********************
-     * Add feature layers
-     ********************/
-    const featureLayer1 = new FeatureLayer({
-        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Major_Cities_/FeatureServer/0"
+    const additionalLayer = new FeatureLayer({
+        portalItem: {
+            id: "662747c89e864d448b6060a206e0fc68" // ID of the new layer you want to add
+        }
     });
 
-    const featureLayer2 = new FeatureLayer({
-        url: "https://services2.arcgis.com/I9cUOJUZvdGAJncI/arcgis/rest/services/Find_Locations_in_USA_Major_Cities/FeatureServer/0"
+    webmap.load().then(() => {
+        webmap.add(additionalLayer); // Add the new layer after the WebMap has loaded
     });
 
-    map.add(featureLayer1);
-    map.add(featureLayer2);
+    const view = new MapView({
+        container: "viewDiv", // Reference to the DOM node that will contain the map
+        map: webmap // Reference to the WebMap object
+    });
 });
+
